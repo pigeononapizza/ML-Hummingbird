@@ -180,6 +180,7 @@ public class HummingbirdAgent : Agent
         // Observe a dot product that indicates whether the beak is pointing toward the flower (1 observation)
         // (+1 means that the beak is pointing directly at the flower, -1 means directly away)
         sensor.AddObservation(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
+        Debug.Log(Vector3.Dot(beakTip.forward.normalized, -nearestFlower.FlowerUpVector.normalized));
 
         // Observe the relative distance from the beak tip to the flower (1 observation)
         sensor.AddObservation(toFlower.magnitude / FlowerArea.AreaDiameter);
